@@ -1,0 +1,264 @@
+{
+	"info": {
+		"_postman_id": "9cea7417-b901-4dd4-96af-0b0e6d78ac5a",
+		"name": "OpenAI",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "24552132",
+		"_collection_link": "https://orange-resonance-214557.postman.co/workspace/New-Team-Workspace~0f76f9f5-c7b6-433b-8d44-a97367b1cfb0/collection/24552132-9cea7417-b901-4dd4-96af-0b0e6d78ac5a?action=share&creator=24552132&source=collection_link"
+	},
+	"item": [
+		{
+			"name": "Test API connection",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}",
+					"host": [
+						"{{url}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "OpenAI chat completion",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n     \"question\":\"strongest character in attack of titan\"\n   }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/samurai/question",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"samurai",
+						"question"
+					],
+					"query": [
+						{
+							"key": "modelv",
+							"value": "gpt-3.5-turbo",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "OpenAI Image Generation",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n     \"question\":\"demon slayer poster\"\n   }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/samurai/image",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"samurai",
+						"image"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "OpenAI Prompt Generation",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n     \"question\":\"demon slayer poster\"\n   }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/samurai/prompt-generator",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"samurai",
+						"prompt-generator"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "OpenAI Streming API - chat completions",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"question\": \"Give me sentence with 5 words\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/samurai/stream/question",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"samurai",
+						"stream",
+						"question"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "OpenAI Streming API - chat completion (no buffer)",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"question\": \"Give me sentence with 5 words\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/samurai/stream/no-buffer/question",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"samurai",
+						"stream",
+						"no-buffer",
+						"question"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "OpenAI Streming API - Prompt Generation (no buffer)",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"question\": \"prompt for avengers poster\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/samurai/stream/no-buffer/prompt-generator",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"samurai",
+						"stream",
+						"no-buffer",
+						"prompt-generator"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Test OpenAi Direct",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "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",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n     \"model\": \"gpt-3.5-turbo\",\n     \"messages\": [{\"role\": \"user\", \"content\": \"give me sentence with 10 words\"}],\n     \"stream\": true\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://api.openai.com/v1/chat/completions",
+					"protocol": "https",
+					"host": [
+						"api",
+						"openai",
+						"com"
+					],
+					"path": [
+						"v1",
+						"chat",
+						"completions"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"variable": [
+		{
+			"key": "url",
+			"value": "https://api.openai.com/v1/"
+		}
+	]
+}
